@@ -14,13 +14,17 @@ angular.module('nickApp')
 .controller('PokedexCtrl', function($scope,$http) {
 	$scope.mydata = [];
 	$scope.troveData = [];
-	
+	$scope.isLoadingTrove = false;
+	$scope.isLoadingData = false;
+
 	$scope.loadtrove = function() {
 		$http({method: "GET", url:"trovelevel1.json", headers: {'Content-type': 'application/json'}})
 		.success(function(data) {
 			console.log(data.response.zone[0].records.article);
 			$scope.troveData=data.response.zone[0].records.article;
+			$scope.isLoadingTrove = false;
 		});
+		$scope.isLoadingTrove = true;
 	};
 	
 	$scope.loaddata = function() {
@@ -29,7 +33,9 @@ angular.module('nickApp')
 			//console.log(data);
 			$scope.mydata = data;
 			$scope.selected_animal=data._Species[0];
+			$scope.isLoadingData = false;
 		});
+		$scope.isLoadingData = true;
 	};
 	$scope.loaddata();
 	

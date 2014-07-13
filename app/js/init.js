@@ -1,13 +1,13 @@
 $(document).ready(function() {
   g_globe.depthTestAgainstTerrain = false;
   viewAustraliaEast();
-  /*
+
   g_scene.screenSpaceCameraController.enableRotate = false;
   g_scene.screenSpaceCameraController.enableTranslate = false;
   g_scene.screenSpaceCameraController.enableZoom = false;
   g_scene.screenSpaceCameraController.enableTilt = false;
   g_scene.screenSpaceCameraController.enableLook = false;
-  */
+
   getAnimalData();
   picking();
   createPKMaster();
