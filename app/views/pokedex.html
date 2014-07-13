@@ -25,15 +25,16 @@
 </style>
 <div class="col-md-4">
 	<ul class="media-list poke_list" >
-		<div class="media" href="#" ng-repeat="animal in animals" ng-click="query(animal.fancyName);">
+		{{mydata.length}}
+		<div class="media" href="#" ng-repeat="species in mydata._Species" ng-click="query(species.ScientificName);">
 			<div class="pull-left" href="#">
 				<div class="poke_thumbnail">
 					<img class="media-object " ng-src="{{animal.image}}">
 				</div>
 			</div>
 			<div class="media-body">
-				<h4 class="media-heading">{{animal.name}}</h4>
-				<p>{{animal.fancyName}}</p>
+				<h4 class="media-heading">{{species.AcceptedCommonName}}</h4>
+				<p>{{species.ScientificName}}</p>
 			</div>
 		</div>
 	</ul>
@@ -41,7 +42,7 @@
 
 <div class="col-md-8">
 	<div class="file">
-		<h1>{{selectedAnimal.AcceptedCommonName}}</h1>
-		<div class="col-md-6 pokedex_img"><img ng-src="{{selectedAnimal._SpeciesProfile.Image[0].URL}}"></div>
+		<h1>{{species.AcceptedCommonName}}</h1>
+		<div class="col-md-6 pokedex_img"><img ng-src="{{species._SpeciesProfile.Image[0].URL}}"></div>
 	</div>
 </div>
