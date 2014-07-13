@@ -12,6 +12,9 @@
 .poke_thumbnail img{
 	height:48px;
 }
+.footer{
+	display:none;
+}
 
 .pokedex_img{
 }
@@ -22,27 +25,78 @@
 	height:624px;
 	overflow:scroll;
 }
+
+.troveData{
+	overflow:scroll;
+	height:400px;
+}
+
+.pokedex_label{
+	text-align:right;
+	font-weight:700;
+}
+.article_list{
+	
+}
+.rareStamp{
+	position:absolute;
+}
+.rareStamp img{
+	height:70px;
+	width:auto;
+}
 </style>
-<div class="col-md-4">
+<div class="col-sm-4">
 	<ul class="media-list poke_list" >
 		{{mydata.length}}
-		<div class="media" href="#" ng-repeat="species in mydata._Species" ng-click="query(species.ScientificName);">
+		<div class="media" href="#" ng-repeat="species in mydata._Species" ng-click="query(species)">
 			<div class="pull-left" href="#">
 				<div class="poke_thumbnail">
-					<img class="media-object " ng-src="{{animal.image}}">
+					<img class="media-object " ng-src="{{species._SpeciesProfile.Image[0].URL}}">
 				</div>
 			</div>
 			<div class="media-body">
 				<h4 class="media-heading">{{species.AcceptedCommonName}}</h4>
 				<p>{{species.ScientificName}}</p>
+				
 			</div>
 		</div>
 	</ul>
 </div>
 
-<div class="col-md-8">
-	<div class="file">
-		<h1>{{species.AcceptedCommonName}}</h1>
-		<div class="col-md-6 pokedex_img"><img ng-src="{{species._SpeciesProfile.Image[0].URL}}"></div>
-	</div>
+<div class="col-sm-8">
+		
+		<h1>{{selected_animal.ScientificName}}</h1>
+		<div class="row">
+			<div class="col-md-6 pokedex_img">
+				<div class="rareStamp">
+					<img src="../images/rare.png" width="130" height="74" alt="Rare"/>
+				</div>
+				<img ng-src="{{selected_animal._SpeciesProfile.Image[0].URL}}"/>
+				
+			</div>
+			<div class="col-md-3 pokedex_label">
+				<p >Kingdom: 		</p>
+				<p>Family Name: 	</p>
+				<p>Family Ranking: 	</p>
+				<p>Common name: 	</p>
+				<p>Class name:		</p>
+				<p ng-show="selected_animal">
+			</div>
+			<div class="cols-md-5">
+
+<p>{{selected_animal.KingdomName}}</p>
+<p>{{selected_animal.FamilyName}}</p>
+<p>{{selected_animal.FamilyRank}}</p>
+<p>{{selected_animal.AcceptedCommonName}}</p>
+<p>{{selected_animal.ClassName}}</p>
+
+			</div>
+			
+		<div class="troveData" >
+			<div class="article_list" ng-repeat="rec in troveData">
+				<p>{{rec.title.value}}</p>
+				<p>{{rec.snippet}}</p>
+			</div>
+		</div>
 </div>
