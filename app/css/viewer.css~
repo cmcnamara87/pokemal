@@ -85,23 +85,23 @@
 }
 
 .player_u_s{
-  background-image: url("app/images/playerU1.png");
+  background-image: url("../images/playerU1.png");
 }
 
 .player_d_s{
-  background-image: url("app/images/playerD1.png");
+  background-image: url("../images/playerD1.png");
 }
 
 .player_l_s{
-  background-image: url("app/images/playerL1.png");
+  background-image: url("../images/playerL1.png");
 }
 
 .player_r_s{
-  background-image: url("app/images/playerR1.png");
+  background-image: url("../images/playerR1.png");
 }
 
 .player_u_m{
-  background-image: url("app/images/playerU.png");
+  background-image: url("../images/playerU.png");
   
   -webkit-animation: play .6s steps(4) infinite;
      -moz-animation: play .6s steps(4) infinite;
@@ -111,7 +111,7 @@
 }
 
 .player_d_m{
-  background-image: url("app/images/playerD.png");
+  background-image: url("../images/playerD.png");
   
   -webkit-animation: play .6s steps(4) infinite;
      -moz-animation: play .6s steps(4) infinite;
@@ -121,7 +121,7 @@
 }
 
 .player_l_m{
-  background-image: url("app/images/playerL.png");
+  background-image: url("../images/playerL.png");
   
   -webkit-animation: play .6s steps(4) infinite;
      -moz-animation: play .6s steps(4) infinite;
@@ -131,7 +131,7 @@
 }
 
 .player_r_m{
-  background-image: url("app/images/playerR.png");
+  background-image: url("../images/playerR.png");
   
   -webkit-animation: play .6s steps(4) infinite;
      -moz-animation: play .6s steps(4) infinite;

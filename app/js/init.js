@@ -1,14 +1,25 @@
 $(document).ready(function() {
   g_globe.depthTestAgainstTerrain = false;
   viewAustraliaEast();
+  /*
   g_scene.screenSpaceCameraController.enableRotate = false;
   g_scene.screenSpaceCameraController.enableTranslate = false;
   g_scene.screenSpaceCameraController.enableZoom = false;
   g_scene.screenSpaceCameraController.enableTilt = false;
   g_scene.screenSpaceCameraController.enableLook = false;
+  */
   getAnimalData();
   picking();
   createPKMaster();
+
+  console.log(g_viewer.scene.camera.position);  
+    lat = parseFloat($('#latdata').attr("data-lat"));
+    lon = parseFloat($('#latdata').attr("data-lon"));
+    console.log(lat);
+    console.log(lon);
+    // note lat & lon are reversed sorry
+    movePKMaster(150,-26,lat,lon);
+
 });
 
 function viewAustraliaEast(){
@@ -206,5 +217,5 @@ function layoutBubble(){
 
 function updateBubblePos(x,y){
   var b = $("#bubble");
-  return $('#bubble').css({'left':x - (b.width()/2) - 10 ,'top':$(document).height() - y - b.outerHeight(true)});
+  return $('#bubble').css({'left':x - (b.width()/2) - 32 ,'top':$(document).height() - y - b.outerHeight(true)});
 }

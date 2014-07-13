@@ -1,6 +1,6 @@
 function createBarChart(data){
   var margin = {top: 30, right: 10, bottom: 10, left: 150},
-    width = 600 - margin.left - margin.right,
+    width = 400 - margin.left - margin.right,
     height = 200 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()

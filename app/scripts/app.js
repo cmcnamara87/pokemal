@@ -17,7 +17,10 @@ angular
               templateUrl: 'views/pokedex.html',
               controller: 'PokedexCtrl'
             })
-            .when('/explore', {
+	    .when('/explore', {
+              templateUrl: 'views/explore.html',
+            })
+            .when('/explore2/:lat/:lon', {
               templateUrl: 'views/explore.html',
               controller: 'ExploreCtrl'
             })

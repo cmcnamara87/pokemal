@@ -1,8 +1,7 @@
-function createPKMaster(){  
+function createPKMaster(){
     $("body").append("<div id='player' class='player_d_s'/>");
-    g_PKMasterPrimitive = [150,-26];
+    g_PKMasterPrimitive =[150,-26];
     setKeyMove();
-    movePKMaster(150,-26,150,-26);
 }
 
 function setKeyMove(){
