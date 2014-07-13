@@ -17,6 +17,8 @@
 }
 
 .pokedex_img{
+	height:200px;
+	overflow:hidden;
 }
 .pokedex_img img{
 	width:100%;
@@ -36,6 +38,11 @@
 	font-weight:700;
 }
 .article_list{
+	margin-top:1em ;
+	margin-top:1em;
+	background-color:#fff;
+	padding:1em;
+	box-shadow:0 0 5px #CCC;
 	
 }
 .rareStamp{
@@ -44,6 +51,16 @@
 .rareStamp img{
 	height:70px;
 	width:auto;
+}
+.pkd .btn{
+	width:100%;
+	background-color:#333;
+	border-radius:0;
+	color:#fff;
+}
+
+.nws{
+	font-style:bold;
 }
 </style>
 <div class="col-sm-4">
@@ -68,12 +85,16 @@
 		
 	<h1>{{selected_animal.ScientificName}}</h1>
 	<div class="row">
-		<div class="col-md-6 pokedex_img">
+		<div class="col-md-6  pkd">
 			<div class="rareStamp" ng-show="">
 				<img src="../images/rare.png" width="130" height="74" alt="Rare"/>
 			</div>
-			<img ng-src="{{selected_animal._SpeciesProfile.Image[0].URL}}"/>
-				
+			<div class="pokedex_img">
+				<img ng-src="{{selected_animal._SpeciesProfile.Image[0].URL}}"/>
+			</div>
+			<a style={width:100%} class="btn" href="#/explore2/{{selected_animal._SpeciesSightings.features[0].geometry.coordinates[0]}}/{{selected_animal._SpeciesSightings.features[0].geometry.coordinates[1]}}">
+				See on Map
+			</a>
 		</div>
 		<div class="col-md-3 pokedex_label">
 			<p >Kingdom: 		</p>
@@ -92,11 +113,20 @@
 				<p>{{selected_animal.ClassName}}</p>
 
 			</div>
-			
-			<div class="troveData" >
-				<div class="article_list" ng-repeat="rec in troveData">
-					<p>{{rec.title.value}}</p>
-					<p>{{rec.snippet}}</p>
-				</div>
+		</div>
+		<div class="troveData" >
+			<div class="article_list" ng-repeat="rec in troveData">
+				<p>{{rec.title.value}}</p>
+				<p>{{rec.snippet}}</p>
 			</div>
 		</div>
+	</div>
+			
+	
+	<div class="troveData" >
+		<div class="article_list" ng-repeat="rec in troveData">
+			<h4>{{rec.title.value}}</h4>
+			<p>{{rec.snippet}}</p>
+		</div>
+	</div>
+</div>

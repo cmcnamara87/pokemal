@@ -24,7 +24,7 @@ angular.module('nickApp')
 	};
 	
 	$scope.loaddata = function() {
-		$http({method: "GET", url:"species_img_10_pretty.json", headers: {'Content-type': 'application/json'}})
+		$http({method: "GET", url:"species_10_pretty.json", headers: {'Content-type': 'application/json'}})
 		.success(function(data) {
 			//console.log(data);
 			$scope.mydata = data;
