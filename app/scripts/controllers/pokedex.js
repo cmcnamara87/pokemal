@@ -42,13 +42,13 @@ angular.module('nickApp')
 
 	$scope.query=function (data){
 		$scope.selected_animal=data;
-		$scope.loadtrove();
+		//$scope.loadtrove();
 		//console.log($scope.selected_animal);
 		//console.log($scope.selected_animal.ConservationStatus.ConservationSignificant);
-		// $http({method: "GET", url:"http://api.trove.nla.gov.au/result?key=1p4a3kdeljvvldl8&encoding=json&zone=article&q="+data.FamilyCommonName, headers: {'Content-type': 'application/json'}})
-		// .success(function(data) {
-		// 	console.log(data);
-		// 	$scope.troveData = data;
-		// });
+		 $http({method: "GET", url:"http://api.trove.nla.gov.au/result?key=1p4a3kdeljvvldl8&encoding=json&zone=article&q="+data.FamilyCommonName, headers: {'Content-type': 'application/json'}})
+		 .success(function(data) {
+		 	console.log(data);
+		 	$scope.troveData = data;
+		 });
 	};
 });
