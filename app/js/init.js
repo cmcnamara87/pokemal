@@ -43,7 +43,7 @@ function getAnimalData(){
 
 function createAnimalBillboard(list){
   var image = new Image();
-  image.src = 'app/images/froggy_bw.png';
+  image.src = 'images/froggy_bw.png';
   image.onload = function() {
     var billboards = new Cesium.BillboardCollection();
     var textureAtlas = new Cesium.TextureAtlas({
