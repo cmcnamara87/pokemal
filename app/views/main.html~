@@ -11,9 +11,11 @@
 		<div class="col-sm-4 pull-right">
 			
 			<div class="pokemon_card" ng-class="activeWildAnimal.animation">
+			     
 				<div class="hurt">
 					<img src="../images/punch.png">
 				</div>
+				
 				<div class="poke_name ">
 					{{activeWildAnimal.name }}
 				</div>
