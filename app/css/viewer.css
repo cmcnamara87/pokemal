@@ -1,0 +1,211 @@
+#bubble:after, #bubble:before {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  border-style: solid;
+  width: 0;
+  height: 0;
+}
+
+#bubble:before {
+  border-color: rgba(0,0,0,0.5) transparent transparent transparent;
+  border-width: 15px;
+  left: 125px;
+}
+
+#bubble:after {
+  border-color: rgba(0,0,0,0.0) transparent transparent transparent;
+  border-width: 10px;
+  left: 128px;
+}
+
+#bubble {
+  position:absolute;
+  display:block;
+  width:250px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  background:rgba(0,0,0,0.5);
+  padding:16px;
+  color:#fff;
+  margin-bottom:20px;
+  z-index:9999;
+}
+
+#bubble #bubble_title {
+  font-size:16px;
+	margin:0px;
+	padding:0px;
+  text-transform:capitalize;
+}
+
+#bubble #bubble_subtitle {
+  font-size:12px;
+  margin:0px;
+  padding-bottom:16px;
+  text-transform:capitalize;
+}
+
+
+#bubble #bubble_info {
+  display: block;
+  height: 240px;
+  overflow: auto;
+}
+
+#bubble #bubble_records {
+  display: block;
+  padding: 2px 0;
+  height: 28px;
+}
+
+#bubble  button{
+  background: rgba(0,0,0,0.5);
+  border:1px solid #aaa;
+  color:#aaa;
+}
+
+#bubble #animalImage{
+  display:block;
+  width:100%;
+  max-width:240px;
+  padding: 4px;
+  border: 1px solid #aaa; 
+}
+
+#player{
+  display:block;
+  position:fixed;
+  top:48%;
+  left:49%;
+  z-index:999;
+  width:32px;
+  height:48px;
+}
+
+.player_u_s{
+  background-image: url("../images/playerU1.png");
+}
+
+.player_d_s{
+  background-image: url("../images/playerD1.png");
+}
+
+.player_l_s{
+  background-image: url("../images/playerL1.png");
+}
+
+.player_r_s{
+  background-image: url("../images/playerR1.png");
+}
+
+.player_u_m{
+  background-image: url("../images/playerU.png");
+  
+  -webkit-animation: play .6s steps(4) infinite;
+     -moz-animation: play .6s steps(4) infinite;
+      -ms-animation: play .6s steps(4) infinite;
+       -o-animation: play .6s steps(4) infinite;
+          animation: play .6s steps(4) infinite;
+}
+
+.player_d_m{
+  background-image: url("../images/playerD.png");
+  
+  -webkit-animation: play .6s steps(4) infinite;
+     -moz-animation: play .6s steps(4) infinite;
+      -ms-animation: play .6s steps(4) infinite;
+       -o-animation: play .6s steps(4) infinite;
+          animation: play .6s steps(4) infinite;
+}
+
+.player_l_m{
+  background-image: url("../images/playerL.png");
+  
+  -webkit-animation: play .6s steps(4) infinite;
+     -moz-animation: play .6s steps(4) infinite;
+      -ms-animation: play .6s steps(4) infinite;
+       -o-animation: play .6s steps(4) infinite;
+          animation: play .6s steps(4) infinite;
+}
+
+.player_r_m{
+  background-image: url("../images/playerR.png");
+  
+  -webkit-animation: play .6s steps(4) infinite;
+     -moz-animation: play .6s steps(4) infinite;
+      -ms-animation: play .6s steps(4) infinite;
+       -o-animation: play .6s steps(4) infinite;
+          animation: play .6s steps(4) infinite;
+}
+
+@-webkit-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -128px; }
+}
+
+@-moz-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -128px; }
+}
+
+@-ms-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -128px; }
+}
+
+@-o-keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -128px; }
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -128px; }
+}
+
+#chartContainer{
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  padding:8px;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  border:1px solid #aaa;
+  z-index:9999;
+}
+
+#chartHeading{
+  font-family:arial;
+  font-size:16px;
+  text-align:center;
+  padding:4px;
+  margin:0px;
+}
+
+#chartArea{
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  border:1px solid #aaa;
+}
+
+.bar.positive {
+  fill: steelblue;
+}
+
+.bar.negative {
+  fill: brown;
+}
+
+.axis text {
+  font: 10px sans-serif;
+  fill: #fff;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #transparent;
+  shape-rendering: crispEdges;
+}

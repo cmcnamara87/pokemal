@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version (or Chrome Frame if pre-IE11). -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Hello World!</title>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/d3.js"></script>
+  <script src="lib/Cesium/Cesium.js"></script>
+  <style>
+      @import url(lib/Cesium/Widgets/widgets.css);
+
+      #cesiumContainer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          overflow: hidden;
+          padding: 0;
+          font-family: sans-serif;
+          z-index:0;
+      }
+
+      body {
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+      }
+  </style>
+   <link rel="stylesheet" href="css/viewer.css" media="screen">
+</head>
+<body>
+  <div id="chartContainer">
+    <h2 id="chartHeading">Animaliea Sighting Count (0.5 lng/lat area)</h2>
+    <div id="chartArea"></div>
+  </div>
+  <div id="cesiumContainer"></div>
+  <script>
+    var g_viewer = new Cesium.Viewer('cesiumContainer',{
+      animation: false,
+      baseLayerPicker: false,
+      fullscreenButton: false,
+      geocoder: false,
+      homeButton: false,
+      infoBox: false,
+      sceneModePicker: false,
+      selectionIndicator: false,
+      timeline: false,
+      navigationHelpButton: false,
+      imageryProvider : new Cesium.BingMapsImageryProvider({
+                            url: '//dev.virtualearth.net',
+                            mapStyle: Cesium.BingMapsStyle.AERIAL_WITH_LABELS
+                        })
+    });
+    
+    var g_json = [];
+    var g_AnimalLabel = [];
+    var g_scene = g_viewer.scene;
+    var g_globe = g_scene.globe;
+    var g_ellipsoid = g_globe.ellipsoid; 
+    var g_cam_eye = new Cesium.Cartesian3(-4936609.83854477, 2802471.198115843, -3302493.1869319747); //Position in CameraControl
+    var g_cam_direction = new Cesium.Cartesian3(0.13071048633182525, -0.08814939128818364, 0.9874940271102416); //Direction in CameraControl
+    var g_cam_up = new Cesium.Cartesian3(-0.8653816895904195, 0.47587525569162314, 0.15702634281354985); //Up in CameraControl
+    var g_handler;
+    var g_infoBubblePos;
+    var g_PKMasterPrimitive;
+
+  </script>
+  <script src="js/init.js"></script>
+  <script src="js/pokemonMaster.js"></script>
+  <script src="js/barChart.js"></script>
+</body>
+</html>
