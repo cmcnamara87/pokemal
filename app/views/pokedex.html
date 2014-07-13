@@ -66,37 +66,37 @@
 
 <div class="col-sm-8">
 		
-		<h1>{{selected_animal.ScientificName}}</h1>
-		<div class="row">
-			<div class="col-md-6 pokedex_img">
-				<div class="rareStamp">
-					<img src="../images/rare.png" width="130" height="74" alt="Rare"/>
-				</div>
-				<img ng-src="{{selected_animal._SpeciesProfile.Image[0].URL}}"/>
-				
+	<h1>{{selected_animal.ScientificName}}</h1>
+	<div class="row">
+		<div class="col-md-6 pokedex_img">
+			<div class="rareStamp" ng-show="">
+				<img src="../images/rare.png" width="130" height="74" alt="Rare"/>
 			</div>
-			<div class="col-md-3 pokedex_label">
-				<p >Kingdom: 		</p>
-				<p>Family Name: 	</p>
-				<p>Family Ranking: 	</p>
-				<p>Common name: 	</p>
-				<p>Class name:		</p>
-				<p ng-show="selected_animal">
+			<img ng-src="{{selected_animal._SpeciesProfile.Image[0].URL}}"/>
+				
+		</div>
+		<div class="col-md-3 pokedex_label">
+			<p >Kingdom: 		</p>
+			<p>Family Name: 	</p>
+			<p>Family Ranking: 	</p>
+			<p>Common name: 	</p>
+			<p>Class name:		</p>
+			<p ng-show="{{selected_animal.ConservationStatus.ConservationSignificant}}">
 			</div>
 			<div class="cols-md-5">
 
-<p>{{selected_animal.KingdomName}}</p>
-<p>{{selected_animal.FamilyName}}</p>
-<p>{{selected_animal.FamilyRank}}</p>
-<p>{{selected_animal.AcceptedCommonName}}</p>
-<p>{{selected_animal.ClassName}}</p>
+				<p>{{selected_animal.KingdomName}}</p>
+				<p>{{selected_animal.FamilyName}}</p>
+				<p>{{selected_animal.FamilyRank}}</p>
+				<p>{{selected_animal.AcceptedCommonName}}</p>
+				<p>{{selected_animal.ClassName}}</p>
 
 			</div>
 			
-		<div class="troveData" >
-			<div class="article_list" ng-repeat="rec in troveData">
-				<p>{{rec.title.value}}</p>
-				<p>{{rec.snippet}}</p>
+			<div class="troveData" >
+				<div class="article_list" ng-repeat="rec in troveData">
+					<p>{{rec.title.value}}</p>
+					<p>{{rec.snippet}}</p>
+				</div>
 			</div>
 		</div>
-</div>
