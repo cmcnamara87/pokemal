@@ -93,6 +93,15 @@
 
 			</div>
 			
+			
+		<div class="mapData" style="">
+		  <br/>
+		  <center>
+		    <a class="btn btn-default" href="#/explore2/{{selected_animal._SpeciesSightings.features[0].geometry.coordinates[0]}}/{{selected_animal._SpeciesSightings.features[0].geometry.coordinates[1]}}">
+		      See on Map
+		  </a>
+		  </center>
+		</div>
 		<div class="troveData" >
 			<div class="article_list" ng-repeat="rec in troveData">
 				<p>{{rec.title.value}}</p>

@@ -20,6 +20,9 @@ angular
 	    .when('/explore', {
               templateUrl: 'views/explore.html',
             })
+	    .when('/explore2//', {
+              templateUrl: 'views/explore.html',
+            })
             .when('/explore2/:lat/:lon', {
               templateUrl: 'views/explore.html',
               controller: 'ExploreCtrl'

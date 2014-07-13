@@ -18,7 +18,9 @@ $(document).ready(function() {
     console.log(lat);
     console.log(lon);
     // note lat & lon are reversed sorry
-    movePKMaster(150,-26,lat,lon);
+    if (lat) {
+	movePKMaster(150,-26,lat,lon);
+    }
 
 });
 
