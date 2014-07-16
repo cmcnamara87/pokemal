@@ -1,104 +1,107 @@
-    <ul class="nav nav-pills pull-right"  style="margin-top:-60px;">
-        <li class="active"><a ng-href="#">Fight</a></li>
-        <li><a ng-href="#/pokedex">AussieDex</a></li>
-        <li><a ng-href="#/explore">Explore</a></li>
-    </ul>
+<ul class="nav nav-pills pull-right" style="margin-top:-60px;">
+    <li class="active"><a ng-href="#">Fight</a>
+    </li>
+    <li><a ng-href="#/pokedex">AussieDex</a>
+    </li>
+    <li><a ng-href="#/explore">Explore</a>
+    </li>
+</ul>
 
 
-<ul id="scene" >
-	
-	<li class="layer expand-width" data-depth=".13">
-		<img class="pra" src="../images/A.png">
-	</li>
-	<li class="layer expand-width " data-depth=".1">
-		<img class="pra" src="../images/clould-01.png">
-	</li>
-	<li class="layer expand-width " data-depth=".12" id="other_poke">
-		<div class="col-sm-4 pull-right">
-			
-			<div class="pokemon_card" ng-class="activeWildAnimal.animation">
-			     
-				<div class="hurt">
-					<img src="../images/punch.png">
-				</div>
-				
-				<div class="poke_name ">
-					{{activeWildAnimal.name }}
-				</div>
-				<div class="progress ">
-					<div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: {{ activeWildAnimal.hp / activeWildAnimal.maxHp * 100 }}%;">
-						{{ activeWildAnimal.hp }} / {{ activeWildAnimal.maxHp }}
-					</div>
-				</div>
-				<div class="pokemon_img ">
-					<img style="max-width:100%;" src="{{ activeWildAnimal.image }}" />
-				</div>
-				<div class="cardfoot">
-					<div class="rare pull-left">Endangered</div>
-					<div class="pull-right moreinfo"> About</div>
-				</div>
-				
-			</div>
-		</div>
-	</li>
-	
-	
-	<li class="layer expand-width" data-depth=".14" >
-		<img class="pra" src="../images/B.png" ></img>
-	</li>
-	
-	<li class="layer expand-width " data-depth=".16" >
-		<div class=" battle_text">
-			<p>{{battleMessage}}</p>
-		</div>
-	</li>
-	
-	<li class="layer expand-width" data-depth=".18" >
-		
-		<img class="pra" src="../images/c.png"/>
-	</li>
-	
-	<li class="layer expand-width" data-depth=".2" id="my_pokemon" ng-class="activeAnimal.animation">
-		<div class="col-sm-4">
-			<div class="pokemon_card">
-				<div class="hurt">
-					<img src="../images/punch.png">
-				</div>
-				<div class="poke_name">
-					{{ activeAnimal.name }}
-				</div>
-				<div class="progress ">
-					<div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: {{ activeAnimal.hp / activeAnimal.maxHp * 100 }}%;">
-						{{ activeAnimal.hp }} / {{ activeAnimal.maxHp }}
-					</div>
-				</div>
-				<div class="pokemon_img">
-					
-					<img style="max-width:100%;" src="{{ activeAnimal.image }}" />
-					
-				</div>
-				<div class="cardfoot">
-					<div class="rare pull-left">Endangered</div>
-					<div class="pull-right moreinfo"> About</div>
-				</div>
-				<div ng-repeat="attack in activeAnimal.attacks"  ng-show="{{!isNotPlayersTurn}}" class="btn-group btn-group-justified poke_control ">
-					<div class="btn-group">
-						<button type="button" class="btn btn-default"ng-click="playerAttack(activeAnimal, activeWildAnimal, attack)">
-							<div class="col-sm-2 move_name">
-								{{ attack.name }}
-							</div>
-							<div class="col-sm-10">
-								<div class="stats row">Hit Point: {{ attack.attackPower }}</div>
-								<div class="stats row">Chance: {{ attack.accuracy }}</div>
-							</div>
-						</button>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</li>
-	
+<ul id="scene">
+
+    <li class="layer expand-width" data-depth=".13">
+        <img class="pra" src="../images/A.png">
+    </li>
+    <li class="layer expand-width " data-depth=".1">
+        <img class="pra" src="../images/clould-01.png">
+    </li>
+    <li class="layer expand-width " data-depth=".12" id="other_poke">
+        <div class="col-sm-4 pull-right">
+
+            <div class="pokemon_card" ng-class="activeWildAnimal.animation">
+
+                <div class="hurt">
+                    <img src="images/punch.png">
+                </div>
+
+                <div class="poke_name ">
+                    {{activeWildAnimal.name }}
+                </div>
+                <div class="progress ">
+                    <div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: {{ activeWildAnimal.hp / activeWildAnimal.maxHp * 100 }}%;">
+                        {{ activeWildAnimal.hp }} / {{ activeWildAnimal.maxHp }}
+                    </div>
+                </div>
+                <div class="pokemon_img ">
+                    <img style="max-width:100%;" src="{{ activeWildAnimal.image }}" />
+                </div>
+                <div class="cardfoot">
+                    <div class="rare pull-left">Endangered</div>
+                    <div class="pull-right moreinfo">About</div>
+                </div>
+
+            </div>
+        </div>
+    </li>
+
+
+    <li class="layer expand-width" data-depth=".14">
+        <img class="pra" src="../images/B.png"></img>
+    </li>
+
+    <li class="layer expand-width " data-depth=".16">
+        <div class=" battle_text">
+            <p>{{battleMessage}}</p>
+        </div>
+    </li>
+
+    <li class="layer expand-width" data-depth=".18">
+
+        <img class="pra" src="../images/c.png" />
+    </li>
+
+    <li class="layer expand-width" data-depth=".2" id="my_pokemon" ng-class="activeAnimal.animation">
+        <div class="col-sm-4">
+            <div class="pokemon_card">
+                <div class="hurt">
+                    <img src="images/punch.png">
+                </div>
+                <div class="poke_name">
+                    {{ activeAnimal.name }}
+                </div>
+                <div class="progress ">
+                    <div class="progress-bar" role="progressbar" aria-valuemax="100" style="width: {{ activeAnimal.hp / activeAnimal.maxHp * 100 }}%;">
+                        {{ activeAnimal.hp }} / {{ activeAnimal.maxHp }}
+                    </div>
+                </div>
+                <div class="pokemon_img">
+
+                    <img style="max-width:100%;" src="{{ activeAnimal.image }}" />
+
+                </div>
+                <div class="cardfoot">
+                    <div class="rare pull-left">Endangered</div>
+                    <div class="pull-right moreinfo">About</div>
+                </div>
+                <div ng-repeat="attack in activeAnimal.attacks" ng-show="{{!isNotPlayersTurn}}" class="btn-group btn-group-justified poke_control ">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default" ng-click="playerAttack(activeAnimal, activeWildAnimal, attack)">
+                            <div class="col-sm-2 move_name">
+                                {{ attack.name }}
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="stats row">Hit Point: {{ attack.attackPower }}</div>
+                                <div class="stats row">Chance: {{ attack.accuracy }}</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </li>
+
 </ul>
 
 
@@ -106,9 +109,8 @@
 <script>
 // Nothing new here...it's all in the CSS!
 var scene = document.getElementById('scene');
-var parallax = new Parallax(scene,{
-	frictionX: 0.2,
-  	frictionY: 0.2,});
-
+var parallax = new Parallax(scene, {
+    frictionX: 0.2,
+    frictionY: 0.2,
+});
 </script>
-	
